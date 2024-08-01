@@ -1,0 +1,18 @@
+base_url = "https://asibahi.github.io/"
+
+compile_sass = true
+build_search_index = false
+title = "Abdul Rahman Sibahi"
+description = "Musings"
+default_language = "en"
+
+[markdown]
+highlight_code = true
+highlight_theme = "agola-dark"
+
+[extra]
+
+links = [
+    { title = "Mail", href = "mailto:a.sibahi@gmail.com" },
+    { title = "GitHub", href = "https://github.com/asibahi" },
+]
