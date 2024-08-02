@@ -49,7 +49,7 @@ I have a few unhinged ideas. But let's talk about the usual approach first.
 
 If you have watched Mamoun Sakkal's video. linked above, on the technical limitations of OpenType when it comes to Arabic script, you would have noticed he spends a lot of the video talking about "Tatweel", or what is sometimes called by its Persian name, Kashida.
 
-[Kashida is a character on all Arabic keyboards](https://www.compart.com/en/unicode/U+0640). It does not have a meaning, by itself or by others, and it is merely decorartive. It is a typographinc (typesetting?) trick, that takes advantage of Arabic's connected nature. For an Arabic reader (and this applies to literally every language that uses the Arabic script), there is literally no difference between جمل and جـــــــمــــــــل. The second one simply looks longer. You can probably see where this is going.
+[Kashida is a character on all Arabic keyboards](https://www.compart.com/en/unicode/U+0640). It does not have a meaning, by itself or by others, and it is merely decorartive. It is a typographinc (typesetting?) trick, that takes advantage of Arabic's connected nature. For an Arabic reader (and this applies to literally every language that uses the Arabic script), there is literally no difference between جمل and جـــــــمـــــــــل. The second one simply looks longer. You can probably see where this is going.
 
 The kashidas method basically inserts these characters betwen the individual letters of clusters.
 
