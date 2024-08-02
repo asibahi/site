@@ -22,18 +22,8 @@
     {% block header %}
     <header class="space">
         <h1>{{ config.title }}</h1>
-        {% set linked_pages = section.pages | filter(attribute="extra.in_header") %}
-        {% if config.extra.links or linked_pages %}
-        <nav class="header-links">
-            Architect and hobbyist. Bad at witty bios. 
-            {% for link in config.extra.links %}
-            <a href="{{ link.href }}">{{ link.title }}</a>
-            {% endfor %}
-            {% for page in linked_pages %}
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-            {% endfor %}
-        </nav>
-        {% endif %}
+        Architect and hobbyist. Bad at websites and witty bios.
+
     </header>
     {% endblock header %}
     {% block content %}
@@ -49,7 +39,7 @@
         <ul>
             {% for post in blog.pages | slice(end=20) %}
             {% if post.extra.arabic %}
-            <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+            <li dir="rtl"><a href="{{ post.permalink }}">{{ post.title }}</a></li>
             {% else %}
             <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
             {% endif %}
@@ -58,11 +48,19 @@
         <!-- <p><a href="{{ blog.permalink }}">Archive</a></p> -->
         {% endif %}
     </main>
+    {% set linked_pages = section.pages | filter(attribute="extra.in_header") %}
+    {% if config.extra.links or linked_pages %}
+    <footer> <small>
+            {% for link in config.extra.links %}
+            <a class="mylink" href="{{ link.href }}">{{ link.title }}</a>
+            {% endfor %}
+            {% for page in linked_pages %}
+            <a class="mylink" href="{{ page.permalink }}">{{ page.title }}</a>
+            {% endfor %}
+        </small> </footer>
+    {% endif %}
     {% endif %}
     {% endblock content %}
-  
-  
-  
 </body>
 
 </html>
