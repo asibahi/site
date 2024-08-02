@@ -25,6 +25,7 @@
         {% set linked_pages = section.pages | filter(attribute="extra.in_header") %}
         {% if config.extra.links or linked_pages %}
         <nav class="header-links">
+            Architect and hobbyist. Bad at witty bios. 
             {% for link in config.extra.links %}
             <a href="{{ link.href }}">{{ link.title }}</a>
             {% endfor %}
@@ -45,7 +46,6 @@
         </div>
         {% endif %}
         {% if blog.pages %}
-        <h2>Thoughts</h2>
         <ul>
             {% for post in blog.pages | slice(end=20) %}
             {% if post.extra.arabic %}
@@ -55,7 +55,7 @@
             {% endif %}
             {% endfor %}
         </ul>
-        <p><a href="{{ blog.permalink }}">Archive</a></p>
+        <!-- <p><a href="{{ blog.permalink }}">Archive</a></p> -->
         {% endif %}
     </main>
     {% endif %}
