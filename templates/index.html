@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html {% if page.lang %} dir="rtl" {% else %} dir="ltr" {% endif %}>
+<html {% if page.extra.arabic %} dir="rtl" {% else %} dir="ltr" {% endif %}>
 
 <head>
     <meta charset="utf-8">
@@ -36,7 +36,7 @@
     </header>
     {% endblock header %}
     {% block content %}
-    {% set blog = get_section(path="blog/_index.md") %}
+    {% set blog = get_section(path="thoughts/_index.md") %}
     {% if section.content or blog.pages %}
     <main>
         {% if section.content %}
@@ -45,10 +45,14 @@
         </div>
         {% endif %}
         {% if blog.pages %}
-        <h2>Posts</h2>
+        <h2>Thoughts</h2>
         <ul>
             {% for post in blog.pages | slice(end=20) %}
+            {% if post.extra.arabic %}
             <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+            {% else %}
+            <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+            {% endif %}
             {% endfor %}
         </ul>
         <p><a href="{{ blog.permalink }}">Archive</a></p>
@@ -56,39 +60,9 @@
     </main>
     {% endif %}
     {% endblock content %}
-    <div class="dark-mode-buttons">
-        <button class="dark-mode-button" id="dark-mode-on"><img src="{{ get_url(path='dark_mode.svg') }}" width="24"
-                height="24" alt="Dark mode" aria-label="dark mode toggle" title="Dark mode"></button>
-        <button class="dark-mode-button" id="dark-mode-off"><img src="{{ get_url(path='light_mode.svg') }}" width="24"
-                height="24" alt="Light mode" aria-label="light mode toggle" title="Light mode"></button>
-    </div>
-    <script>
-        const cls = document.body.classList;
-        const getSessionTheme = sessionStorage.getItem("theme");
-        if (getSessionTheme === "dark") {
-            cls.toggle("dark-mode", true);
-        } else if (getSessionTheme === "light") {
-            cls.toggle("dark-mode", false);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            cls.toggle("dark-mode", true);
-        }
-
-        document.getElementById("dark-mode-on").addEventListener("click", function (e) {
-            cls.toggle("dark-mode", true);
-            sessionStorage.setItem("theme", "dark");
-        });
-        document.getElementById("dark-mode-off").addEventListener("click", function (e) {
-            cls.toggle("dark-mode", false);
-            sessionStorage.setItem("theme", "light");
-        });
-    </script>
-    <noscript>
-        <style>
-            .dark-mode-buttons {
-                display: none;
-            }
-        </style>
-    </noscript>
+  
+  
+  
 </body>
 
 </html>

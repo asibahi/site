@@ -8,7 +8,7 @@ default_language = "en"
 
 [markdown]
 highlight_code = true
-highlight_theme = "agola-dark"
+highlight_theme = "inspired-github"
 
 [extra]
 

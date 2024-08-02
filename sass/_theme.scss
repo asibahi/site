@@ -1,14 +1,9 @@
 $foreground: #222222;
-$background: #eeeeee;
+$background: #ffffff;
 $secondary: gray;
 $tertiary: #dddddd;
 $accent: #3d3cba;
 
-$foreground-dark: #eeeeee;
-$background-dark: #161616;
-$secondary-dark: #999999;
-$tertiary-dark: #444444;
-$accent-dark: #959bf0;
 
 @mixin light-theme {
     color: $foreground;
@@ -102,27 +97,8 @@ $accent-dark: #959bf0;
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        @include dark-theme;
-    }
-}
 
-.dark-mode-buttons {
-    position: absolute;
 
-    top: 1em;
-    right: 1em;
-}
-
-.dark-mode-button {
-    border: none;
-    background-color: transparent;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
 
 body:not(.dark-mode) {
     @include light-theme;
@@ -136,14 +112,4 @@ body:not(.dark-mode) {
     }
 }
 
-body.dark-mode {
-    @include dark-theme;
 
-    #dark-mode-on {
-        display: none;
-    }
-
-    #dark-mode-off {
-        display: inline;
-    }
-}
