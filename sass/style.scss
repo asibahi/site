@@ -32,7 +32,6 @@ body {
 }
 
 .space {
-    text-align: start;
     margin-bottom: 2em;
 }
 
@@ -46,6 +45,7 @@ h3,
 h4,
 h5,
 h6 {
+    text-align: start;
     line-height: 1.25;
 }
 
