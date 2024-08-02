@@ -73,11 +73,11 @@ li {
 
 ul.index {
     list-style-type: "";
-}
 
-li[dir="rtl"] {
-    padding-inline-start: 40px;
-    text-align: right;
+    li[dir="rtl"] {
+        padding-inline-start: 40px;
+        text-align: right;
+    }
 }
 
 pre {

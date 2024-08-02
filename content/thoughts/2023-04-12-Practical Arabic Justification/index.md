@@ -65,7 +65,7 @@ The software, for whatever reason, *does not* call the shaper (HarfBuzz and the 
 
 ![Kashida "Justification"](just-noto-kashida.png)
 
-This is not a display typeface being misused by the way. It is meant for texts. If you want to see more dramatic failuresm try the fonts [Gulzar](https://gulzarfont.org) and [Aref Ruqaa](https://fonts.google.com/specimen/Aref+Ruqaa?query=aref) and set Word's justification setting to "Justify Low". This is **not** a failure of the fonts. This is a failure of the justification engine.
+This is not a display typeface being misused by the way. It is meant for texts. If you want to see more dramatic failures, try the fonts [Gulzar](https://gulzarfont.org) and [Aref Ruqaa](https://fonts.google.com/specimen/Aref+Ruqaa?query=aref) and set Word's justification setting to "Justify Low". This is **not** a failure of the fonts. This is a failure of the justification engine.
 
 The way type designers protect their fonts from this fate is by making the Kashida unicode character be 0-width (aka does nothing). The font [Sakkal Kitab](https://fonts.ilovetypography.com/fonts/sakkal-design/sakkal-kitab) (which costs $120 I do not have), does not even permit you to put Kashidas manually between any two letters. Only in specific places, and only manually (or by use of stylistic sets). You can try it yourself on the webpage by copying parts of the poem above and inserting the kashida in random places. 
 
