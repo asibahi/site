@@ -107,7 +107,7 @@ First of all you need whether the font has `jalt`s or not. You could even ask th
 
 For example, if the user specifies using `ss16`, `ss17`, `ss18`, `ss19`, and `ss20` for justification, in this order, use those. If they don't, use `jalt` if available.
 
-Pseuorustcode time! I will be adjusting on the `build_line()` function from the [linebreaking](Linebreaking.md) article.
+Pseuorustcode time! I will be adjusting on the `build_line()` function from the [linebreaking](@/thoughts/2023-04-02-Linebreaking/index.md) article.
 
 ```rust
 fn build_line(input: ShapedText,
@@ -268,7 +268,7 @@ This is probably the best solution. Sadly, it is not (yet?) common in most fonts
 
 For the uninitiated, [here is a useful Google Fonts primer on what variable fonts are and how they work](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts). [This is an article by John Hudson of Tiro Typeworks](https://medium.com/variable-fonts/https-medium-com-tiro-introducing-opentype-variable-fonts-12ba6cd2369). The most useful part of Variable Fonts, imo, is that font designers are free to implement any variable axis they want. The spec has five axis with a .. well .. specified behaviour, but designers are not restricted by them. The five registered axis are Weight `wght`, Width `wdth`, Optical size `opsz`, Italic `ital`, and Slant `slnt`. But how about [Temprature](https://codepen.io/mandymichael/pen/pxXNbr)? [Stretch](https://www.29lt.com/product/29lt-okaso/)? [Serif](https://www.type-together.com/belarius-font)? [The possibilities are practically endless](https://v-fonts.com/tags/C5).
 
-For justification, one can either use the Width axis (as [Sultan al-Maqtari does with his font Sultan Plain](https://sites.google.com/view/sultanfonts/plain)), or use what is called a `GEXT`, a Glyph Extension axis. This [article by Simon Cozens](https://simoncozens.github.io/more-on-newbreak/) has an example for an Armenian font. The simple idea is that you break the lines with a greedy algorithm (what Knuth calls first-fit), and then simply .. increase the width, or the glyph extension, of your lines to fit in the desired space.
+For justification, one can either use the Width axis (as [Sultan al-Maqtari does with his font Sultan Plain](hhttps://sites.google.com/view/sultanfonts/naskh-font/plain)), or use what is called a `GEXT`, a Glyph Extension axis. This [article by Simon Cozens](https://simoncozens.github.io/more-on-newbreak/) has an example for an Armenian font. The simple idea is that you break the lines with a greedy algorithm (what Knuth calls first-fit), and then simply .. increase the width, or the glyph extension, of your lines to fit in the desired space.
 
 This gives back autonomy to the font designer: the line stretchs the way they see fit. It is simpler to program for software makers than the hodgepodge of selecting `jalt`s above. The spaces are all at the ideal space. The text all looks neat. [Here are a few demos of how this might look in practice](https://github.com/jmsole/gext-demos). There are no downsides!!
 
