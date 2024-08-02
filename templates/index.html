@@ -36,7 +36,7 @@
         </div>
         {% endif %}
         {% if blog.pages %}
-        <ul>
+        <ul class="index">
             {% for post in blog.pages | slice(end=20) %}
             {% if post.extra.arabic %}
             <li dir="rtl"><a href="{{ post.permalink }}">{{ post.title }}</a></li>
