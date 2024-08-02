@@ -52,7 +52,7 @@
     {% if config.extra.links or linked_pages %}
     <footer> <small>
             {% for link in config.extra.links %}
-            <a class="mylink" href="{{ link.href }}">{{ link.title }}</a>
+            <a class="mylink" href="{{ link.href }}" rel="me">{{ link.title }}</a>
             {% endfor %}
             {% for page in linked_pages %}
             <a class="mylink" href="{{ page.permalink }}">{{ page.title }}</a>
